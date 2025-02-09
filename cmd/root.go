@@ -80,7 +80,7 @@ func (c *CMD) extract(args []string) ([]string, []Flag) {
 		// Handle timestamp (-t, --timestamp)
 		if v == "-t" || v == "--timestamp" {
 			if i+1 < len(args) { // Prevent out-of-bounds access
-				flags = append(flags, Flag{Name: "timestamp", Shorthand: "-t", Usage: "Set the creation timestamp for the file (YYYY-MM-DD HH:MM:SS)", Value: args[i+1]})
+				flags = append(flags, Flag{Name: "--timestamp", Shorthand: "-t", Usage: "Set the creation timestamp for the file (YYYY-MM-DD HH:MM:SS)", Value: args[i+1]})
 				i++ // Skip next value since it's part of this flag
 			} else {
 				fmt.Println("Error: Missing value for -t / --timestamp flag")
@@ -91,7 +91,7 @@ func (c *CMD) extract(args []string) ([]string, []Flag) {
 		// Handle permissions (-p, --permissions)
 		if v == "-p" || v == "--permissions" {
 			if i+1 < len(args) { // Prevent out-of-bounds access
-				flags = append(flags, Flag{Name: "permissions", Shorthand: "-p", Usage: "Set file permissions (USER or ADMIN)", Value: args[i+1]})
+				flags = append(flags, Flag{Name: "--permissions", Shorthand: "-p", Usage: "Set file permissions (USER or ADMIN)", Value: args[i+1]})
 				i++ // Skip next value since it's part of this flag
 			} else {
 				fmt.Println("Error: Missing value for -p / --permissions flag")
